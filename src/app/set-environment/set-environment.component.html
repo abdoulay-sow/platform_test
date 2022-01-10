@@ -1,50 +1,41 @@
 <div class="container alternate-theme">
-  <div  style="width: 520px">
-    <div>
-      <h2 style="text-align: center;">
+  <div>
+    <div class="section header">
+      <h1 class="header-title">
         Welcome Temitope
-      </h2>
-      <h5 style="text-align: center;">
+      </h1>
+      <h5 class="header-subtitle">
         Lets hep you setup your environment
       </h5>
     </div>
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      
+    <form [formGroup]="environmentForm">
+      <div class="section domain-input">
 
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label></mat-label>
-          <input matInput placeholder="Placeholder">
-          <div matSuffix>.edacy.com</div>
-        </mat-form-field>
-      </div>
+        <div class="domain-box">
+          <p>Set your domain</p>
+          <mat-form-field appearance="fill" class="suffixed-input domain-field">
 
+            <input matInput placeholder="" formControlName="domain">
+            <div matSuffix>.edacy.com</div>
+          </mat-form-field>
+        </div>
 
-      <div>
-        <p>Default Language</p>
-        
-        <div class="radio-button-box" style="border: 1px;">
+        <div class="language-box">
+          <p>Default Language</p>
 
-          <mat-radio-group aria-label="Select an option" appearance="outline">
-            <mat-radio-button value="1">Arabic</mat-radio-button>
-            <mat-radio-button value="2">English</mat-radio-button>
-            <mat-radio-button value="2">French</mat-radio-button>
-          </mat-radio-group>
+          <div class="radio-button-box">
+
+            <mat-radio-group class="languages" aria-label="Select an option" appearance="outline" formControlName="defaultLanguage">
+              <mat-radio-button value="arabic">Arabic</mat-radio-button>
+              <mat-radio-button value="english">English</mat-radio-button>
+              <mat-radio-button value="french">French</mat-radio-button>
+            </mat-radio-group>
+          </div>
         </div>
       </div>
-  
-      
-  
-     
-  
-      
-  
-      
-  
-     
-    </div>
-    <div style="text-align: center;">
-      <button mat-flat-button color="primary">continue to your dashboard</button>
-    </div>
+      <div class="continue-button">
+        <button mat-flat-button color="primary" (click)="save($event)">continue to your dashboard</button>
+      </div>
+    </form>
   </div>
 </div>

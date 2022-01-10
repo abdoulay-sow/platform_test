@@ -9,8 +9,14 @@
       <h3>Email</h3>
       <mat-form-field class="example-full-width" appearance="fill">
         <!--<mat-label>Email</mat-label>-->
-        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-          placeholder="">
+        <input 
+          type="email" 
+          matInput 
+          [formControl]="emailFormControl" 
+          [errorStateMatcher]="matcher"
+          placeholder=""
+          i18n-placeholder="User name placeholder in login form"
+          >
         <!--<mat-hint>Errors appear instantly!</mat-hint>-->
         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
           Please enter a valid email address

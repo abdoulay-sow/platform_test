@@ -85,7 +85,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "edacy-test:build"
+            "browserTarget": "edacy-test:build",
+            "format": "xliff2",
+            "outputPath": "src/locale"
           }
         },
         "test": {

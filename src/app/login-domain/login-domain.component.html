@@ -1,41 +1,32 @@
 <div class="container alternate-theme">
-  <div  style="width: 520px">
-    <div>
-      <h2 style="text-align: center;">
+  <div>
+    <div class="section header">
+      <h2 class="header-title">
         Welcome Temitope
       </h2>
-      <h5 style="text-align: center;">
+      <h5 class="header-subtitle">
         Lets hep you setup your environment
       </h5>
     </div>
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      
-
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label></mat-label>
-          <input matInput placeholder="Placeholder">
-          <div matSuffix>.edacy.com</div>
-        </mat-form-field>
-      </div>
-
-
-      <div>
-        <p>Default Language</p>
+    <form >
+      <div class="section domain-input">
         
-        <div class="radio-button-box" style="border: 1px;">
-
-          <mat-radio-group aria-label="Select an option" appearance="outline">
-            <mat-radio-button value="1">Arabic</mat-radio-button>
-            <mat-radio-button value="2">English</mat-radio-button>
-            <mat-radio-button value="2">French</mat-radio-button>
-          </mat-radio-group>
+  
+        <div>
+          <p>Please Enter your domain</p>
+          <mat-form-field appearance="fill" class="suffixed-input">
+            <input matInput >
+            <div matSuffix>.edacy.com</div>
+          </mat-form-field>
         </div>
+  
+       
       </div>
-     
-    </div>
-    <div style="text-align: center;">
-      <button mat-flat-button color="primary">Go tot the account</button>
-    </div>
+      <div style="text-align: center;">
+        <button mat-flat-button color="primary">
+          Go tot the account
+        </button>
+      </div>
+    </form>
   </div>
 </div>

@@ -2,5 +2,36 @@
 @use '@angular/material' as mat;
 @import "variables";
 // ‘mat’ namespace is referenced.
-$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-primary: mat.define-palette(mat.$cyan-palette, 700);
 $my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+
+.suffixed-input {
+  //background-color: aqua;
+  .mat-form-field-flex {
+    overflow: hidden;
+    padding: 0px !important;
+    background: white !important;
+    border: 1px solid silver !important;
+    border-radius: 5px !important;
+  }
+  .mat-form-field-infix {
+    border: 0px !important;
+    top: .25em;
+    padding-inline: .5em;
+  }
+  .mat-form-field-suffix {
+    border: 0px !important;
+    padding: 1em;
+    background-color: silver;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    //top: 0px !important;
+  }
+  .mat-form-field-outline {
+    position: 0 !important;
+  }
+  .mat-form-field-underline {
+    display: none;
+  }
+}

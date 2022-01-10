@@ -20,6 +20,10 @@ import { CreateProgramComponent } from './create-program/create-program.componen
 import { SetailsProgramComponent } from './setails-program/setails-program.component';
 import { MaterialModule } from './material-module';
 import { ColorSketchModule } from 'ngx-color/sketch';
+import { Apollo } from 'apollo-angular';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
+import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -37,6 +41,16 @@ import { ColorSketchModule } from 'ngx-color/sketch';
     SetailsProgramComponent
   ],
   imports: [
+    HttpClientModule,
+    TranslateModule.forRoot(
+      {
+        loader: {
+          provide: TranslateLoader,
+          useFactory: (http:HttpClient) => new TranslateHttpLoader(http, './assets/i18n/', '.json'),
+          deps: [HttpClient]
+        }
+      }
+    ),
     ColorSketchModule,
     MaterialModule,
     FormsModule,
@@ -47,7 +61,7 @@ import { ColorSketchModule } from 'ngx-color/sketch';
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [Apollo , HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

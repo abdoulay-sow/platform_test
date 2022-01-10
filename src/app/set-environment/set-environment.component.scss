@@ -1,5 +1,59 @@
-@import "../../variables";
+/*@import "../../variables";
 div {
   background-color: var(--alternate-theme-primary);
+}*/
+
+.container {
+  display: flex;
+  justify-content: center;
 }
-  
+.languages {
+  display: flex;
+  justify-content: space-between;
+}
+.domain-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  margin-top: 6rem;
+  &-title {
+    text-align: center;
+  }
+  &-subtitle {
+    text-align: center;
+  }
+}
+
+.language-box {
+  width: 100%;
+}
+
+.radio-button-box {
+  border: 1px;
+  border: 1px solid silver;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.continue-button {
+  margin-block: 4rem;
+  text-align: center;
+  button {
+    text-transform: uppercase;
+  }
+}
+.domain-field {
+  input {
+    text-align: center;
+  }
+}
+
+.domain-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}

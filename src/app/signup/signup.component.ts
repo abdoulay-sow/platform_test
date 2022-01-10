@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -26,26 +28,30 @@ export class SignupComponent implements OnInit {
     acceptTerms: new FormControl(false, [Validators.required]),
   })
 
-  firstNameFormControl = new FormControl('', [Validators.required])
-  lastNameFormControl = new FormControl('', [Validators.required])
-  emailFormControl = new FormControl('', [Validators.required, Validators.email])
-  passwordFormControl = new FormControl('', [Validators.required, Validators.minLength(6)])
-  confirmFormControl = new FormControl('', [Validators.required])
-
   matcher = new MyErrorStateMatcher();
 
-  constructor() { 
+  constructor(
+    private userService: UserService,
+    private router: Router
+    ) { 
     
   }
   onCheckboxChange($event: Event) {
-    
+
   }
 
   ngOnInit(): void {
+    console.log(this.userService.getUser())
   }
 
   saveSignup() {
     console.log('Signup Form => ', this.signupForm)
+
+    //if (!this.signupForm.valid) {
+    //  return;
+    //}
+
+    this.router.navigate(['set-environment'])
   }
 
 }

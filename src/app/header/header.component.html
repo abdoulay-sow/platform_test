@@ -39,21 +39,49 @@
       Create Program
     </a>
   </div>
-  
-  <!--<p>
-    
-    <mat-toolbar>
-     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+
+
+</div>
+<p>
+
+  <mat-toolbar style="justify-content: space-between;">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My App</span>
+    
+    <div>
+      <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+
+          <mat-chip selected color="primary">
+            Preview
+          </mat-chip>
+      </mat-chip-list>
+    </div>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    
+   
+    <div style="display: flex; align-items: center;">
+      <mat-icon>language</mat-icon>
+      <select (change)="changeLang($event)">
+        <option value="fr">fr</option>
+        <option value="en">en</option>
+      </select>
+    </div>
+
+    <button mat-flat-button>Manage Account</button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-     <mat-icon>share</mat-icon>
-   </button>
+      <mat-icon>circle_notifications</mat-icon>
+    </button>
+
+    <button  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon style="transform: scale(2);">account_circle</mat-icon>
+    </button>
+
   </mat-toolbar>
-  </p>-->
-</div>
+</p>

@@ -1,0 +1,12 @@
+.drawer {
+  width: 10%;
+}
+.menu {
+  display: flex; flex-direction: column;
+}
+.menu-item-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+}

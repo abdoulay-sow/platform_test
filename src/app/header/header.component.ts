@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyTranslatorService } from '../my-translator.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   hero = "wisdom"
-  constructor() { }
+  constructor(private myTranslator: MyTranslatorService) { }
 
   ngOnInit(): void {
+  }
+
+  changeLang(e: Event) {
+    console.log('e => ', e)
+
+    if (!(e && e.target && e.target)) {
+      return;
+    }
+    this.myTranslator.changeLang((e.target as any).value)
   }
 
 }
