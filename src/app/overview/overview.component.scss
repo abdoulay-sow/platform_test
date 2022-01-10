@@ -1,0 +1,50 @@
+
+.create-program-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+}
+.programs {
+  margin: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.program {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  .image {
+    flex-grow: 1;
+    min-width: 200px;
+    img {
+      width: 200px;
+    }
+    margin-right: 1rem;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    &-header{
+      display: flex;
+      justify-content: space-between;
+      &-title {
+        
+      }
+      &-activation {
+
+      }
+    }
+  }
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    margin-left: 1rem
+  }
+}

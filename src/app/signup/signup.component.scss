@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center
+}
+  
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%
+}
+
+.example-full-width {
+  width: 100%
+}
+
+mat-label {
+  color: black
+}
+
+h3 {
+  margin-bottom: 0px
+}
+
+::ng-deep .mat-form-field {
+  .mat-form-field-flex {
+    background: grey
+  }
+  .mat-input-element {
+    color: black
+  }
+  
+  .mat-form-field-label {
+    color: slategray
+  }
+  
+  .mat-form-field-underline {
+    background-color: slategray
+  }
+  
+  .mat-form-field-ripple {
+    background-color: slategray
+  }
+  
+  .mat-form-field-required-marker {
+    color: slategray
+  }
+}
+    

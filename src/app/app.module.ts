@@ -19,6 +19,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { CreateProgramComponent } from './create-program/create-program.component';
 import { SetailsProgramComponent } from './setails-program/setails-program.component';
 import { MaterialModule } from './material-module';
+import { ColorSketchModule } from 'ngx-color/sketch';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MaterialModule } from './material-module';
     SetailsProgramComponent
   ],
   imports: [
+    ColorSketchModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,1 +1,122 @@
-<p>customization works!</p>
+<div class="container">
+  <!-- Domain -->
+  <div class="section domain">
+    <div class="cus-header">
+      <div class="cus-header--title">Domain</div>
+      <div class="cus-header--action">
+        <button mat-stroked-button color="accent">Save</button>
+      </div>
+    </div>
+    <div class="cus-content">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label></mat-label>
+          <input matInput placeholder="Placeholder">
+          <div matSuffix>.edacy.com</div>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo -->
+  <div class="section logos">
+    <div class="cus-header">
+      <div class="cus-header--title">Logo</div>
+      <div class="cus-header--action">
+        <button mat-stroked-button color="accent">Save</button>
+      </div>
+    </div>
+    <div class="cus-content">
+      <div class="logo-container">
+        <div class="details">
+          <div style="width: 5rem;">
+            <div>
+              <mat-icon>cloud_upload</mat-icon>
+            </div>
+          </div>
+          <div>DEscription Text</div>
+        </div>
+        <div class="details">
+          <div style="width: 5rem;">
+            <div>
+              <mat-icon>cloud_upload</mat-icon>
+            </div>
+          </div>
+          <div>DEscription Text</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme -->
+  <div class="section theme">
+    <div class="cus-header">
+      <div class="cus-header--title">Theme</div>
+      <div class="cus-header--action">
+        <button mat-stroked-button color="accent">Save</button>
+      </div>
+    </div>
+
+    <div class="cus-content">
+
+      <!-- Color Selectors -->
+      <div class="color-selectors">
+        <div class="color-selectors-item">
+          <p>Title</p>
+          <color-sketch  (onChangeComplete)="changeComplete($event)"></color-sketch>
+        </div>
+  
+        <div class="color-selectors-item">
+          <p>Title</p>
+          <color-sketch  (onChangeComplete)="changeComplete($event)"></color-sketch>
+        </div>
+      </div>
+  
+  
+      <!-- preview -->
+      <p style="margin-inline: 3rem;">Preview</p>
+      <div style="display: flex; margin-inline: 3rem; background-color: white; padding: 1rem; flex-wrap: wrap;">
+        <div class="" style="flex-grow: 1; padding-inline: 3rem;">
+          <div>
+            <div style="border-top-left-radius: 5px;background-color: yellow; position: relative; height: 80px;">
+              <div style="background: green; width: 30px; height: 30px; border-radius: 50%;position: absolute; top: 15px; left: 15px;">
+              </div>  
+            </div>
+          </div>
+    
+          <div style="display: flex; height: 100px;">
+            <div style="flex-grow: 1; background-color: silver;">
+              
+            </div>
+            <div style="flex-grow: 2;">
+              <div style="margin: 1rem; width: 80%; height: 10px; background-color: green; border-radius: 30px;"></div>
+              <div style="margin: 1rem; width: 80%; height: 10px; background-color: green; border-radius: 30px;"></div>
+              <div style="margin: 1rem; width: 80%; height: 10px; background-color: green; border-radius: 30px;"></div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="" style="flex-grow: 1; padding-inline: 3rem;">
+          <div>
+            <div style="border-top-left-radius: 5px;background-color: yellow; position: relative; height: 80px;">
+              <div style="background: green; width: 30px; height: 30px; border-radius: 50%;position: absolute; top: 15px; left: 15px;">
+              </div>  
+            </div>
+          </div>
+    
+          <div style="display: flex; align-items: center; height: 100px;">
+            <div style="margin: 1rem; width: 40%; height: 20px; background-color: yellow;"></div>
+            <div style="margin: 1rem; width: 40%; height: 20px; border: 1px solid yellow;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+
+  
+
+</div>

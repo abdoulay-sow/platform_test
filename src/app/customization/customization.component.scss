@@ -1,0 +1,52 @@
+.container {
+  margin: 1rem;
+}
+
+.domain {
+  display: flex;
+  flex-direction: column;
+}
+.cus-header {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1rem;
+  &--title {
+
+  }
+  &--action {
+    
+  }
+}
+.cus-content {
+  padding: 2rem;
+  background-color: silver;
+}
+.logo-container {
+  display: flex;
+  justify-content: space-around;
+  //flex-direction: column;
+  mat-icon {
+    font-size: 5rem
+  }
+  .details {
+    display: flex;
+
+  }
+}
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.color-selectors {
+  margin-block: 1rem;
+  padding: 2rem;
+  
+  display: flex;
+  justify-content: space-around;
+  &-item {
+    margin: 1rem;
+  }
+}
