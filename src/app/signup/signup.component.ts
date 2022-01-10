@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormControl, Validators, FormGroupDirective, NgForm, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 
@@ -17,6 +17,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class SignupComponent implements OnInit {
 
+  signupForm = new FormGroup({
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    confirm: new FormControl('', [Validators.required]),
+    acceptTerms: new FormControl(false, [Validators.required]),
+  })
+
   firstNameFormControl = new FormControl('', [Validators.required])
   lastNameFormControl = new FormControl('', [Validators.required])
   emailFormControl = new FormControl('', [Validators.required, Validators.email])
@@ -25,9 +34,18 @@ export class SignupComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  constructor() { }
+  constructor() { 
+    
+  }
+  onCheckboxChange($event: Event) {
+    
+  }
 
   ngOnInit(): void {
+  }
+
+  saveSignup() {
+    console.log('Signup Form => ', this.signupForm)
   }
 
 }

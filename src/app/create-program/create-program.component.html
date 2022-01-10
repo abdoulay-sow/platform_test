@@ -1,1 +1,74 @@
-<p>create-program works!</p>
+<div class="container">
+  <div class="languages section">
+    <div class="selected">
+      <button mat-flat-button color="basic">English</button>
+      <button mat-flat-button color="basic">French</button>
+    </div>
+    <div class="selector">
+      <mat-select>
+        <mat-option value="true">First option</mat-option>
+        <mat-option value="false">Second option</mat-option>
+      </mat-select>
+    </div>
+  </div>
+
+  <div class="title section">
+    <p>Program Title</p>
+    <div>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="">
+        <div matSuffix>.edacy.com</div>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="level-type section">
+    <div class="level">
+      <p>Program Level</p>
+      <div class="checks">
+        <mat-checkbox>Beginner</mat-checkbox>
+        <mat-checkbox>Intermediate</mat-checkbox>
+        <mat-checkbox>Advance</mat-checkbox>
+      </div>
+    </div>
+
+    <div class="type">
+      <p>Program Type</p>
+      <div class="checks">
+        <mat-checkbox>Foundation</mat-checkbox>
+        <mat-checkbox>Specialization</mat-checkbox>
+      </div>
+    </div>
+  </div>
+
+  <div class="description section">
+    <p>Program Description</p>
+    <textarea name="" id="" rows="10"></textarea>
+  </div>
+
+  <div class="cover-image section">
+    <p>Cover Image</p>
+    <div class="upload">
+      <mat-icon class="icon-display">cloud_upload</mat-icon>
+      Drag and drop image here or just click to select
+    </div>
+  </div>
+
+  <div class="introduction-video section">
+    <p>Introduction Video</p>
+    <div class="upload">
+      <div>
+        <mat-icon class="icon-display">cloud_upload</mat-icon>
+      </div>
+      <p>
+        Drag and drop image here or just click to select
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <button mat-flat-button color="accent">
+      + ADD CURICULUM
+    </button>
+  </div>
+</div>

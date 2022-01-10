@@ -8,6 +8,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { LoginComponent } from './login/login.component';
 import { LoginDomainComponent } from './login-domain/login-domain.component';
 import { CustomizationComponent } from './customization/customization.component';
+import { CreateProgramComponent } from './create-program/create-program.component';
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'login-domain', component: LoginDomainComponent },
   { path: 'customization', component: CustomizationComponent },
+  { path: 'create-program', component: CreateProgramComponent },
 ];
 
 @NgModule({
