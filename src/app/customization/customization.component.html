@@ -48,6 +48,8 @@
     </div>
   </div>
 
+  <button mat-flat-button color="primary"> Test </button>
+
   <!-- Theme -->
   <div class="section theme">
     <div class="cus-header">
@@ -63,12 +65,12 @@
       <div class="color-selectors">
         <div class="color-selectors-item">
           <p>Primary</p>
-          <color-sketch  (onChangeComplete)="changeComplete($event)"></color-sketch>
+          <color-sketch  (onChangeComplete)="changePrimaryComplete($event)"></color-sketch>
         </div>
   
         <div class="color-selectors-item">
           <p>Secondary</p>
-          <color-sketch  (onChangeComplete)="changeComplete($event)"></color-sketch>
+          <color-sketch  (onChangeComplete)="changeSecondaryComplete($event)"></color-sketch>
         </div>
       </div>
   

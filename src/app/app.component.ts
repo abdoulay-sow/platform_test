@@ -10,7 +10,6 @@ import { MyTranslatorService } from './my-translator.service';
 export class AppComponent {
   title = 'edacy-test';
 
-
   supportLanguages = ['en', 'fr']
 
   constructor(private translateService: TranslateService, private myTranslatorService: MyTranslatorService) {
@@ -25,6 +24,8 @@ export class AppComponent {
       
       this.translateService.use(lang)
     })
+
+    
   }
 
   
