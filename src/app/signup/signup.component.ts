@@ -20,12 +20,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class SignupComponent implements OnInit {
 
   signupForm = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    confirm: new FormControl('', [Validators.required]),
-    acceptTerms: new FormControl(false, [Validators.required]),
+    firstName: new FormControl('Abdoulaye', [Validators.required]),
+    lastName: new FormControl('SOW', [Validators.required]),
+    email: new FormControl('layesow1011@gmail.com', [Validators.required, Validators.email]),
+    password: new FormControl('Abc123456', [Validators.required, Validators.minLength(6)]),
+    confirm: new FormControl('Abc123456', [Validators.required]),
+    acceptTerms: new FormControl(true, [Validators.required]),
   })
 
   matcher = new MyErrorStateMatcher();
@@ -41,17 +41,27 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.userService.getUser())
+    
   }
 
-  saveSignup() {
-    console.log('Signup Form => ', this.signupForm)
+  async saveSignup() {
 
-    //if (!this.signupForm.valid) {
-    //  return;
-    //}
+    if (this.signupForm.invalid) return;
 
-    this.router.navigate(['set-environment'])
+    const data = await  this.userService.addUser({
+      firstName: this.signupForm.controls['firstName'].value,
+      lastName: this.signupForm.controls['lastName'].value,
+      email: this.signupForm.controls['email'].value,
+      password: this.signupForm.controls['password'].value,
+    })
+
+    this.userService.login(this.signupForm.controls['email'].value,
+    this.signupForm.controls['password'].value)
+    .then((data: any) => {
+      localStorage.setItem('token', data.data.login.token)
+      this.router.navigate(['set-environment'])
+    })
+    
   }
 
 }

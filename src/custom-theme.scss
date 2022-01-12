@@ -8,5 +8,5 @@ $custom-warning: mat-palette($mat-red, A200, A100);
 
 $custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warning);
 
-@include angular-material-theme($custom-theme)
+//@include angular-material-theme($custom-theme)
 

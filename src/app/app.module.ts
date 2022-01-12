@@ -24,6 +24,7 @@ import { Apollo } from 'apollo-angular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
+import { GraphqlModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
     SetailsProgramComponent
   ],
   imports: [
+    GraphqlModule,
     HttpClientModule,
     TranslateModule.forRoot(
       {

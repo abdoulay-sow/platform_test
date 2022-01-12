@@ -8,22 +8,25 @@
         Lets hep you setup your environment
       </h5>
     </div>
-    <form >
+    <form [formGroup]="loginDomainForm">
       <div class="section domain-input">
         
   
         <div>
           <p>Please Enter your domain</p>
-          <mat-form-field appearance="fill" class="suffixed-input">
-            <input matInput >
+          <mat-form-field  appearance="fill" class="suffixed-input">
+            <input matInput formControlName="domain">
             <div matSuffix>.edacy.com</div>
+            <mat-error *ngIf="loginDomainForm.controls['domain'].hasError('exist')">
+              Not Exist
+            </mat-error>
           </mat-form-field>
         </div>
   
        
       </div>
       <div style="text-align: center;">
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" (click)="submit()">
           Go tot the account
         </button>
       </div>

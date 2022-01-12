@@ -5,6 +5,11 @@
       
     
   </div>
+
+  <div *ngIf="user && !user.user.isconfirmed">
+    <button>Resend Email</button>
+  </div>
+
   <div class="action-cards">
     <div class="action-card action-card-1">
       <div><mat-icon>display_settings</mat-icon></div>

@@ -15,8 +15,6 @@ export class HeaderComponent implements OnInit {
   }
 
   changeLang(e: Event) {
-    console.log('e => ', e)
-
     if (!(e && e.target && e.target)) {
       return;
     }

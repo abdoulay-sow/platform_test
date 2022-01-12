@@ -17,6 +17,12 @@
 
             <input matInput placeholder="" formControlName="domain">
             <div matSuffix>.edacy.com</div>
+            <mat-error *ngIf="environmentForm.controls['domain'].hasError('exist')">
+              Already Taken
+            </mat-error>
+            <mat-error *ngIf="environmentForm.controls['domain'].hasError('required')">
+              Must put something
+            </mat-error>
           </mat-form-field>
         </div>
 
@@ -26,9 +32,9 @@
           <div class="radio-button-box">
 
             <mat-radio-group class="languages" aria-label="Select an option" appearance="outline" formControlName="defaultLanguage">
-              <mat-radio-button value="arabic">Arabic</mat-radio-button>
-              <mat-radio-button value="english">English</mat-radio-button>
-              <mat-radio-button value="french">French</mat-radio-button>
+              <mat-radio-button value="Ar">Arabic</mat-radio-button>
+              <mat-radio-button value="En">English</mat-radio-button>
+              <mat-radio-button value="Fr">French</mat-radio-button>
             </mat-radio-group>
           </div>
         </div>

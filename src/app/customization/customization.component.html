@@ -4,15 +4,18 @@
     <div class="cus-header">
       <div class="cus-header--title">Domain</div>
       <div class="cus-header--action">
-        <button mat-stroked-button color="accent">Save</button>
+        <button mat-stroked-button color="accent" (click)="submitDomain()">Save</button>
       </div>
     </div>
     <div class="cus-content">
       <div>
         <mat-form-field appearance="outline">
           <mat-label></mat-label>
-          <input matInput placeholder="Placeholder">
+          <input [(ngModel)]="domain" matInput placeholder="Placeholder">
           <div matSuffix>.edacy.com</div>
+          <mat-error *ngIf="domainError">
+            {{domainError}}
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -55,7 +58,7 @@
     <div class="cus-header">
       <div class="cus-header--title">Theme</div>
       <div class="cus-header--action">
-        <button mat-stroked-button color="accent">Save</button>
+        <button mat-stroked-button color="accent" (click)="saveTheme()">Save</button>
       </div>
     </div>
 
@@ -65,12 +68,12 @@
       <div class="color-selectors">
         <div class="color-selectors-item">
           <p>Primary</p>
-          <color-sketch  (onChangeComplete)="changePrimaryComplete($event)"></color-sketch>
+          <color-sketch [color]="primaryColor"  (onChangeComplete)="changePrimaryComplete($event)"></color-sketch>
         </div>
   
         <div class="color-selectors-item">
           <p>Secondary</p>
-          <color-sketch  (onChangeComplete)="changeSecondaryComplete($event)"></color-sketch>
+          <color-sketch [color]="secondaryColor" (onChangeComplete)="changeSecondaryComplete($event)"></color-sketch>
         </div>
       </div>
   
@@ -80,8 +83,8 @@
       <div style="display: flex; margin-inline: 3rem; background-color: white; padding: 1rem; flex-wrap: wrap;">
         <div class="" style="flex-grow: 1; padding-inline: 3rem;">
           <div>
-            <div style="border-top-left-radius: 5px;background-color: yellow; position: relative; height: 80px;">
-              <div style="background: green; width: 30px; height: 30px; border-radius: 50%;position: absolute; top: 15px; left: 15px;">
+            <div [ngStyle]="{'background-color': primaryColor,'border-top-left-radius': '5px', 'position': 'relative', 'height': '80px'}">
+              <div [ngStyle]="{'background': secondaryColor, 'width': '30px', 'height': '30px', 'border-radius': '50%','position': 'absolute', 'top': '15px', 'left': '15px'}">
               </div>  
             </div>
           </div>
@@ -91,9 +94,9 @@
               
             </div>
             <div style="flex-grow: 2;">
-              <div style="margin: 1rem; width: 80%; height: 10px; background-color: green; border-radius: 30px;"></div>
-              <div style="margin: 1rem; width: 80%; height: 10px; background-color: green; border-radius: 30px;"></div>
-              <div style="margin: 1rem; width: 80%; height: 10px; background-color: green; border-radius: 30px;"></div>
+              <div [ngStyle]="{'margin': '1rem', 'width': '80%', 'height': '10px', 'background-color': secondaryColor, 'border-radius': '30px'}"></div>
+              <div [ngStyle]="{'margin': '1rem', 'width': '80%', 'height': '10px', 'background-color': secondaryColor, 'border-radius': '30px'}"></div>
+              <div [ngStyle]="{'margin': '1rem', 'width': '80%', 'height': '10px', 'background-color': secondaryColor, 'border-radius': '30px'}"></div>
             </div>
           </div>
         </div>
@@ -101,15 +104,15 @@
   
         <div class="" style="flex-grow: 1; padding-inline: 3rem;">
           <div>
-            <div style="border-top-left-radius: 5px;background-color: yellow; position: relative; height: 80px;">
-              <div style="background: green; width: 30px; height: 30px; border-radius: 50%;position: absolute; top: 15px; left: 15px;">
+            <div [ngStyle]="{'border-top-left-radius': '5px', 'background-color': primaryColor, 'position': 'relative', 'height': '80px'}">
+              <div [ngStyle]="{'background': secondaryColor, 'width': '30px', 'height': '30px', 'border-radius': '50%', 'position': 'absolute', 'top': '15px', 'left': '15px'}">
               </div>  
             </div>
           </div>
     
           <div style="display: flex; align-items: center; height: 100px;">
-            <div style="margin: 1rem; width: 40%; height: 20px; background-color: yellow;"></div>
-            <div style="margin: 1rem; width: 40%; height: 20px; border: 1px solid yellow;"></div>
+            <div [ngStyle]="{'margin': '1rem', 'width': '40%', 'height': '20px', 'background-color': primaryColor}"></div>
+            <div [ngStyle]="{'margin': '1rem', 'width': '40%', 'height': '20px', 'border': '1px solid '+primaryColor}"></div>
           </div>
         </div>
       </div>
