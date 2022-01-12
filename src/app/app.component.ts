@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MyTranslatorService } from './my-translator.service';
 import { ThemeServiceService } from './theme-service.service';
-import { UserService } from './user.service';
+import { UserService, HeaderType } from './user.service';
 import { PlatformService } from './platform.service';
 import { Router } from '@angular/router';
 
@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'edacy-test';
+  header = "HOME"
 
   supportLanguages = ['en', 'fr']
 
@@ -43,16 +44,29 @@ export class AppComponent {
   }
 
   async ngOnInit(): Promise<void> {
+
+    this.userService.currentHeader.subscribe((data: HeaderType) => {
+      this.header = data
+    })
     
-    const token = localStorage.getItem('token')
-    if (!token) return;
+    const token = localStorage.getItem('token-edacy')
+    
+    if (!token) {
+      this.router.navigate(['login'])
+      return;
+    }
+    
 
     
     const session = await this.userService.getSessionByToken(token)
 
-    if (!session) {
+    
+
+    if (!session ) {
       this.router.navigate(['login'])
     }
+
+    
 
     this.userService.setUser({
       id: session.id,
@@ -71,7 +85,7 @@ export class AppComponent {
       //this.router.navigate(['login-domain'])
     }
 
-    console.log('Session => ', session)
+    
   }
 
   

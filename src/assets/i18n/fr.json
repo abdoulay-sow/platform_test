@@ -1,6 +1,13 @@
 {
   "home": {
     
-    "title": "Bienvenue sur le support de multi langages"
+    "title": "Bienvenue sur le support de multi langages",
+    "start":  "Commencez avec EDACY"
+  },
+  "signup": {
+    "firstname": "Prenom",
+    "lastname": "Nom",
+    "password": "Mot de passe",
+    "confirm_password": "Confirmer Mot de passe"
   }
 }

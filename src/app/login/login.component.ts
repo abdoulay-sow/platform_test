@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-
+    this.userService.changeHeader('HOME')
   }
 
   async login() {
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.controls['email'].value,
       this.loginForm.controls['password'].value)
 
-    localStorage.setItem('token', data.data.login.token)
+    localStorage.setItem('token-edacy', data.data.login.token)
 
     this.userService.setUser({
       id: data.data.login.id,

@@ -1,5 +1,12 @@
 {
   "home": {
-    "title": "Welcome to multi language support application"
+    "title": "Welcome to multi language support application",
+    "start": "Get Started with EDACY "
+  },
+  "signup": {
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "password": "Password",
+    "confirm_password": "Confirm Password"
   }
 }

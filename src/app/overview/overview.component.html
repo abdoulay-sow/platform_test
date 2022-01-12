@@ -1,7 +1,7 @@
 
 <div>
   <div class="create-program-button">
-      <button mat-flat-button color="accent">Create a Program</button>
+      <button mat-flat-button color="accent" (click)="goCreateProgram()">Create a Program</button>
   </div>
   <div class="programs">
     <div class="program">
@@ -11,12 +11,12 @@
         </div>
         <div class="details">
           <div class="details-header">
-            <div class="details-header-title">The Title</div>
+            <div class="details-header-title"><h2>The Title</h2></div>
             <div class="details-header-activation">
               <form class="example-container" [formGroup]="options" >
-                <mat-select [formControl]="activationControl">
-                  <mat-option value="true">First option</mat-option>
-                  <mat-option value="false">Second option</mat-option>
+                <mat-select formControlName="activation" value="true">
+                  <mat-option value="true">Active</mat-option>
+                  <mat-option value="false">Desactivate</mat-option>
                 </mat-select>
               </form>
             </div>

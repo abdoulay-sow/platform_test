@@ -78,4 +78,12 @@ export class CreateProgramComponent implements OnInit {
     (document.getElementById('imageInput') as any).click()
   }
 
+  handleVideo() {
+    (document.getElementById('videoInput') as any).click()
+  }
+
+  onVideoChange(e: Event) {
+
+  }
+
 }

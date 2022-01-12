@@ -41,11 +41,10 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.userService.changeHeader('HOME')
   }
 
   async saveSignup() {
-    console.log('hey')
     if (this.signupForm.invalid) return;
 
     const data = await  this.userService.addUser({
@@ -58,10 +57,12 @@ export class SignupComponent implements OnInit {
     this.userService.login(this.signupForm.controls['email'].value,
     this.signupForm.controls['password'].value)
     .then((data: any) => {
-      localStorage.setItem('token', data.data.login.token)
+      localStorage.setItem('token-edacy', data.data.login.token)
       this.router.navigate(['set-environment'])
     })
     
   }
+
+  
 
 }

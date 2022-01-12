@@ -116,3 +116,22 @@ $app-theme: mat-light-theme(mat-palette($dynamic-theme-primary), mat-palette($dy
     display: none;
   }
 }
+
+app-root {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  mat-drawer-container {
+    flex-grow: 1;
+  }
+}
+
+.container {
+  height: 100%
+}
+
+.cdk-overlay-pane {
+  top: 8% !important;
+  right: 0 !important
+}

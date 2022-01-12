@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorEvent } from 'ngx-color';
-import * as tinycolor from 'tinycolor2'
 import { ThemeServiceService } from '../theme-service.service';
 import { PlatformService, Platform } from '../platform.service';
 
@@ -66,9 +65,6 @@ export class CustomizationComponent implements OnInit {
       subdomain: this.domain
     })
     this.oldDomain = this.domain
-
-
-    console.log('Platform => ', this.platformService.getPlatform())
   }
 
   async saveTheme() {

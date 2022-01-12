@@ -20,7 +20,7 @@ export class GraphqlModule {
       request: ((op: any) => {
         op.setContext({
           headers: {
-            authorization: `Bearer ${localStorage.getItem('token')}`, 
+            authorization: `Bearer ${localStorage.getItem('token-edacy')}`, 
           }
         })
       }) as any

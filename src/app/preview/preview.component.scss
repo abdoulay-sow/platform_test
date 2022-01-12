@@ -1,0 +1,16 @@
+.empty-preview {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon-box {
+  margin-bottom: 2rem;
+  mat-icon {
+    transform: scale(3);
+  }
+}
+.warning-message {
+  margin-bottom: 2rem;
+}

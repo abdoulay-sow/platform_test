@@ -3,14 +3,14 @@
   <div style="width: 520px">
     <div>
       <h2 style="text-align: center;">
-        Get Started with EDACY
+        {{'home.start' | translate}}
       </h2>
     </div>
     <form [formGroup]="signupForm">
       <div>
 
 
-        <h3>First Name</h3>
+        <h3>{{'signup.firstname' | translate}}</h3>
         <mat-form-field class="example-full-width" appearance="fill">
           <input type="text" matInput formControlName="firstName" [errorStateMatcher]="matcher" placeholder="">
           
@@ -19,7 +19,7 @@
           </mat-error>
         </mat-form-field>
 
-        <h3>Last Name</h3>
+        <h3>{{'signup.lastname' | translate}}</h3>
         <mat-form-field class="example-full-width" appearance="fill">
           
           <input type="text" matInput formControlName="lastName" [errorStateMatcher]="matcher" placeholder="">
@@ -42,7 +42,7 @@
           </mat-error>
         </mat-form-field>
 
-        <h3>Password</h3>
+        <h3>{{'signup.password' | translate}}</h3>
         <mat-form-field class="example-full-width" appearance="fill">
           
           <input type="password" matInput formControlName="password" [errorStateMatcher]="matcher" placeholder="">
@@ -55,7 +55,7 @@
           </mat-error>
         </mat-form-field>
 
-        <h3>Confirm Password</h3>
+        <h3>{{'signup.confirm_password' | translate}}</h3>
         <mat-form-field class="example-full-width" appearance="fill">
           
           <input type="password" matInput formControlName="confirm" [errorStateMatcher]="matcher" placeholder="">

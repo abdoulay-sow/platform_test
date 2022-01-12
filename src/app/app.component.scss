@@ -9,7 +9,8 @@ $secondary: var(--secondary-color);
   width: 10%;
 }
 .menu {
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .menu-item-box {
   display: flex;
@@ -18,3 +19,5 @@ $secondary: var(--secondary-color);
   padding: 2rem;
   background-color: $primary;
 }
+
+

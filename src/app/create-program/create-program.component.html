@@ -61,10 +61,11 @@
       <p>Introduction Video</p>
       <div class="upload">
         <div>
-          <mat-icon class="icon-display">cloud_upload</mat-icon>
+          <mat-icon class="icon-display" (click)="handleVideo()">cloud_upload</mat-icon>
         </div>
         <p>
           Drag and drop image here or just click to select
+          <input hidden id="videoInput" type="file" accept="video/*" (change)="onVideoChange($event)" />
         </p>
       </div>
     </div>

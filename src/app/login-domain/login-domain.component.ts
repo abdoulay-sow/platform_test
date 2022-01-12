@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlatformService } from '../platform.service';
 import { Router } from '@angular/router';
 import { ThemeServiceService } from '../theme-service.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login-domain',
@@ -16,6 +17,7 @@ export class LoginDomainComponent implements OnInit {
   })
 
   constructor(
+    private userService: UserService,
     private router: Router,
     private platformService: PlatformService,
     private themeService: ThemeServiceService) { }
@@ -48,6 +50,7 @@ export class LoginDomainComponent implements OnInit {
           this.themeService.savePrimaryColor(data.theme.secondaryColor)
         }
       }
+      this.userService.changeHeader('LOGGED')
       this.router.navigate(['overview'])
     } else {
       this.loginDomainForm.controls['domain'].setErrors({exist: "Do you forget"})

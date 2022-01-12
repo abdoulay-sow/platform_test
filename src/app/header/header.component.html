@@ -1,4 +1,4 @@
-<div class="header-box">
+<!--<div class="header-box">
   <div>
     <a routerLink="/signup">
       Signup
@@ -39,22 +39,27 @@
       Create Program
     </a>
   </div>
+  <div>
+    <a routerLink="/preview">
+      Preview
+    </a>
+  </div>
 
 
-</div>
-<p>
+</div>-->
+<p *ngIf="headerType === 'LOGGED'">
 
   <mat-toolbar style="justify-content: space-between;">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+      Logged
     </button>
-    
+
     <div>
       <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
 
-          <mat-chip selected color="primary">
-            Preview
-          </mat-chip>
+        <mat-chip selected color="primary" (click)="openPreview()">
+          Preview
+        </mat-chip>
       </mat-chip-list>
     </div>
     <span class="example-spacer"></span>
@@ -64,8 +69,66 @@
     <span class="example-spacer"></span>
     <span class="example-spacer"></span>
     <span class="example-spacer"></span>
-    
-   
+
+
+    <div style="display: flex; align-items: center;">
+      <mat-icon>language</mat-icon>
+      <select (change)="changeLang($event)">
+        <option value="fr">fr</option>
+        <option value="en">en</option>
+      </select>
+    </div>
+
+    <button mat-flat-button>Manage Account</button>
+    <button  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>circle_notifications</mat-icon>
+    </button>
+
+    <button mat-icon-button class="example-icon" (click)="isOpen = !isOpen"
+      aria-label="Example icon-button with share icon" >
+      <mat-icon style="transform: scale(2);">account_circle</mat-icon>
+    </button>
+    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOpen]="isOpen">
+      <ul class="example-list">
+        <li>Profile Settings</li>
+        <li (click)="goToCustomize()">Customize</li>
+        <li (click)="logout()">Logout</li>
+      </ul>
+    </ng-template>
+
+  </mat-toolbar>
+</p>
+<p *ngIf="headerType === 'HOME'" class="edacy-box">
+
+  <mat-toolbar style="justify-content: space-between;">
+    <div class="edacy">EDACY</div>
+
+  </mat-toolbar>
+</p>
+<p *ngIf="headerType === 'PREVIEW'">
+
+  <mat-toolbar style="justify-content: space-between;">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div>
+      <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+
+        <mat-chip selected color="primary" (click)="exitPreview()">
+          Exit Preview
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+
+
     <div style="display: flex; align-items: center;">
       <mat-icon>language</mat-icon>
       <select (change)="changeLang($event)">
@@ -79,7 +142,7 @@
       <mat-icon>circle_notifications</mat-icon>
     </button>
 
-    <button  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon style="transform: scale(2);">account_circle</mat-icon>
     </button>
 

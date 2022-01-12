@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 interface UserProfile {
   firstName: string,
@@ -31,12 +32,21 @@ export interface User {
     isconfirmed: boolean,
   }
 }
+
+export type HeaderType = 'HOME' | 'LOGGED' | 'PREVIEW'
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
   user: User | null = null;
+
+  private headerSource = new BehaviorSubject<HeaderType>('HOME');
+  currentHeader: Observable<HeaderType> = this.headerSource.asObservable();
+
+  changeHeader(value: HeaderType) {
+    this.headerSource.next(value)
+  }
 
   setUser(user: User) {
     this.user = user
@@ -72,10 +82,6 @@ export class UserService {
       }
     `;
 
-
-
-
-    
     return this.apollo.mutate({
       mutation: REGISTER_USER
     })
@@ -145,7 +151,21 @@ export class UserService {
       if (res.data) return res.data.fetchSessionByToken
       return res.data;
     })
-    .catch(() => false)
+      .catch(() => false)
+  }
+
+  logout() {
+    const LOGOUT_USER = gql`
+      mutation logout {logout}
+    `;
+
+    return this.apollo.mutate({
+      mutation: LOGOUT_USER
+    })
+      .toPromise()
+      .then((data: any) => data.data.logout)
+      .catch(() => false)
+
   }
 
 }

@@ -6,7 +6,8 @@
 }
 .programs {
   margin: 1rem;
-  border: 1px solid black;
+  border: 1px solid silver;
+  border-radius: 10px;
   padding: 1rem;
 }
 
@@ -47,4 +48,8 @@
   button {
     margin-left: 1rem
   }
+}
+
+::ng-deep .mat-select-value {
+  max-width: 100px !important;
 }
