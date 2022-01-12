@@ -64,6 +64,7 @@ export class AppComponent {
 
     if (!session ) {
       this.router.navigate(['login'])
+      return;
     }
 
     
@@ -83,9 +84,18 @@ export class AppComponent {
 
     if (!this.platformService.getPlatform()) {
       //this.router.navigate(['login-domain'])
+      //return;
     }
 
+    this.router.navigate(['login'])
+
+
+
     
+  }
+
+  goToOverview() {
+    this.router.navigate(['home'])
   }
 
   

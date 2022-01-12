@@ -2,12 +2,18 @@
 
   <mat-toolbar style="justify-content: space-between;">
     
+    <div style="border: 1px dashed blue;
+    padding: 2px;
+    font-size: 15px;
+    border-radius: 10px;" (click)="goToCustomize()">
+      {{ 'home.customization' | translate }}
+    </div>
 
     <div>
       <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
 
-        <mat-chip selected color="primary" (click)="openPreview()">
-          Preview
+        <mat-chip selected color="primary" (click)="openPreview()" style="color: white">
+          {{ 'home.preview' | translate }}
         </mat-chip>
       </mat-chip-list>
     </div>
@@ -39,9 +45,9 @@
     </button>
     <ng-template cdkConnectedOverlay [cdkConnectedOverlayOpen]="isOpen">
       <ul class="example-list">
-        <li>Profile Settings</li>
-        <li (click)="goToCustomize()">Customize</li>
-        <li (click)="logout()">Logout</li>
+        <li>{{ 'home.profile_parameter' | translate }}</li>
+        <li (click)="goToCustomize()">{{ 'home.customization' | translate }}</li>
+        <li (click)="logout()">{{ 'home.logout' | translate }}</li>
       </ul>
     </ng-template>
 
@@ -65,7 +71,7 @@
       <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
 
         <mat-chip selected color="primary" (click)="exitPreview()">
-          Exit Preview
+          {{ 'home.exit_preview' | translate }}
         </mat-chip>
       </mat-chip-list>
     </div>

@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToCustomize() {
-    this.router.navigate(['customize'])
+    this.router.navigate(['customization'])
   }
 
   logout() {

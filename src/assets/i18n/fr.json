@@ -2,7 +2,14 @@
   "home": {
     
     "title": "Bienvenue sur le support de multi langages",
-    "start":  "Commencez avec EDACY"
+    "start":  "Commencez avec EDACY",
+    "preview": "Aperçu",
+    "exit_preview": "Quitter Aperçu",
+    "customization": "Personalisation",
+    "overview": "Panorama",
+    "analytics": "Statistiques",
+    "logout": "Deconnexion",
+    "profile_parameter": "Parametres"
   },
   "signup": {
     "firstname": "Prenom",

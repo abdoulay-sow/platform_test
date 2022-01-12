@@ -312,13 +312,13 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened class="drawer" *ngIf="header === 'LOGGED'">
     <div class="menu">
-      <div class="menu-item-box">
+      <div (click)="goToOverview()" class="menu-item-box" style="background-color: rgb(105, 110, 110); color: white;">
         <mat-icon>home</mat-icon>
-        <span>Overview</span>
+        <span>{{ 'home.overview' | translate }}</span>
       </div>
       <div class="menu-item-box">
         <mat-icon>analytics</mat-icon>
-        <span>Analytics</span>
+        <span>{{ 'home.analytics' | translate }}</span>
       </div>
       <div class="menu-item-box">
         <mat-icon>first_page</mat-icon>
@@ -326,6 +326,7 @@
       </div>
     </div>
   </mat-drawer>
+  
   <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
 </mat-drawer-container>
 

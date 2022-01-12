@@ -50,6 +50,9 @@
           <mat-error *ngIf="signupForm.controls['password'].hasError('minLength')">
             Password must be greater than 6 caracteres
           </mat-error>
+          <mat-error *ngIf="signupForm.controls['password'].hasError('diff')">
+            Password are not the same
+          </mat-error>
           <mat-error *ngIf="signupForm.controls['password'].hasError('required')">
             Password is <strong>required</strong>
           </mat-error>

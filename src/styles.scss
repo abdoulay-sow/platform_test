@@ -104,7 +104,8 @@ $app-theme: mat-light-theme(mat-palette($dynamic-theme-primary), mat-palette($dy
   .mat-form-field-suffix {
     border: 0px !important;
     padding: 1em;
-    background-color: $primary;
+    background-color: grey;
+    color: white;
     border-top-right-radius: 5%;
     border-bottom-right-radius: 5%;
     //top: 0px !important;

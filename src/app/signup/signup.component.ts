@@ -20,9 +20,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class SignupComponent implements OnInit {
 
   signupForm = new FormGroup({
-    firstName: new FormControl('Abdoulaye', [Validators.required]),
-    lastName: new FormControl('SOW', [Validators.required]),
-    email: new FormControl('layesow1011@gmail.com', [Validators.required, Validators.email]),
+    firstName: new FormControl('AZDAZD', [Validators.required]),
+    lastName: new FormControl('azazdazd', [Validators.required]),
+    email: new FormControl('dazdazda@ezfez.com', [Validators.required, Validators.email]),
     password: new FormControl('Abc123456', [Validators.required, Validators.minLength(6)]),
     confirm: new FormControl('Abc123456', [Validators.required]),
     acceptTerms: new FormControl(true, [Validators.required]),
@@ -47,6 +47,12 @@ export class SignupComponent implements OnInit {
   async saveSignup() {
     if (this.signupForm.invalid) return;
 
+    if (this.signupForm.controls['password'].value !== this.signupForm.controls['confirm'].value) {
+      this.signupForm.controls['password'].setErrors({diff: "Not Same Password"})
+      this.signupForm.updateValueAndValidity()
+      return;
+    }
+
     const data = await  this.userService.addUser({
       firstName: this.signupForm.controls['firstName'].value,
       lastName: this.signupForm.controls['lastName'].value,
@@ -57,6 +63,7 @@ export class SignupComponent implements OnInit {
     this.userService.login(this.signupForm.controls['email'].value,
     this.signupForm.controls['password'].value)
     .then((data: any) => {
+      console.log('Data => ', data)
       localStorage.setItem('token-edacy', data.data.login.token)
       this.router.navigate(['set-environment'])
     })

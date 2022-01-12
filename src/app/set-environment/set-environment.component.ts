@@ -39,6 +39,8 @@ export class SetEnvironmentComponent implements OnInit {
       return;
     }
 
+    console.log('Lang => ', this.environmentForm.controls['defaultLanguage'].value)
+
 
     const result = await this.platformService.createPlatform(
       domain,

@@ -43,6 +43,9 @@ export class PlatformService {
 
   createPlatform(domain: string, lang: string) {
 
+    console.log('Domain => ', domain)
+    console.log('Lang => ', lang)
+
     let CREATE_PLATFORM: DocumentNode | null = null;
 
     if (lang === "En") {

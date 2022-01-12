@@ -1,7 +1,14 @@
 {
   "home": {
     "title": "Welcome to multi language support application",
-    "start": "Get Started with EDACY "
+    "start": "Get Started with EDACY ",
+    "preview": "Preview",
+    "exit_preview": "Exit Preview",
+    "customization": "Customization",
+    "overview": "Overview",
+    "analytics": "Analytics",
+    "logout": "Logout",
+    "profile_parameter": "Profile Settings"
   },
   "signup": {
     "firstname": "First Name",
