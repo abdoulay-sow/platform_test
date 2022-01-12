@@ -45,7 +45,7 @@ export class SignupComponent implements OnInit {
   }
 
   async saveSignup() {
-
+    console.log('hey')
     if (this.signupForm.invalid) return;
 
     const data = await  this.userService.addUser({
